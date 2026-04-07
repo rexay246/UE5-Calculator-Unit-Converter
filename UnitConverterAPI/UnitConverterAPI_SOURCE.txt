@@ -1,0 +1,107 @@
+// UnitConverterAPI.cpp
+
+#include "UnitConverterAPI.h"
+#include <limits> // for std::numeric_limits
+
+// Returns: how many centimeters == 1 unit of 'Unit'
+bool UUnitConverterAPI::UnitFactorToCm(EUnitType Unit, double& OutToCm)
+{
+    switch (Unit)
+    {
+        case EUnitType::Miles:
+            // #TODO: set OutToCm for Miles
+            // hint: 1 mile = 160,934.4 centimeters
+            return true;
+
+        case EUnitType::Feet:
+            // #TODO: set OutToCm for Feet
+            // hint: 1 foot = 30.48 centimeters
+            return true;
+
+        case EUnitType::Centimeters:
+            // #TODO: set OutToCm for Centimeters
+            // hint: 1 centimeter = 1.0 centimeters
+            return true;
+
+        default:
+            // (optional) #TODO: log a warning for unknown unit
+            return false;
+    }
+}
+
+// Map UI indices -> enum (must match Combo order: 0=Miles, 1=Feet, 2=Centimeters)
+bool UUnitConverterAPI::IndexToUnit(int32 Index, EUnitType& OutUnit)
+{
+    switch (Index)
+    {
+        case 0:
+            // #TODO: map index 0 to Miles
+            return true;
+
+        case 1:
+            // #TODO: map index 1 to Feet
+            return true;
+
+        case 2:
+            // #TODO: map index 2 to Centimeters
+            return true;
+
+        default:
+            return false; // unknown index
+    }
+}
+
+// Enum-based conversion
+double UUnitConverterAPI::ConvertUnits(double Value, EUnitType From, EUnitType To)
+{
+    double FromFactorCm = 0.0;
+    double ToFactorCm   = 0.0;
+
+	/*
+    // #TODO: get cm factors for both 'From' and 'To' in the if statement
+	// Use UnitFactorToCm() twice:
+    //        - once to resolve the 'From' unit into centimeters
+    //        - once to resolve the 'To' unit into centimeters
+	// If EITHER call fails, immediately return NaN.
+	// Uncomment this code block after implementation
+	
+    if ()
+    {
+		// return if unknown unit is requested
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+	*/
+
+    // #TODO: perform conversion like we did in assignment 01
+	// and return the result here
+    // return result;
+
+    // Placeholder so scaffold compiles:
+    return 0.0;
+}
+
+// Index-based conversion (Blueprint will call this)
+double UUnitConverterAPI::ConvertUnitsByIndex(double Value, int32 FromIndex, int32 ToIndex)
+{
+	EUnitType FromUnit, ToUnit;
+
+	/*
+    // #TODO: map indices to enums in the if statement
+	// Reuse IndexToUnit() twice:
+    //        - once to map FromIndex -> FromUnit
+    //        - once to map ToIndex   -> ToUnit
+	// If EITHER call fails, immediately return NaN.
+	// Uncomment this code block after implementation
+		   
+    if ()
+    {
+		// return if unknown index
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+	*/
+
+    // #TODO: call the enum-based version for conversion and return its result
+
+    // Placeholder so scaffold compiles:
+    return 0.0;
+}
